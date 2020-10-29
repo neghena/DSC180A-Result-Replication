@@ -1,4 +1,4 @@
-# DSC 180A Methodology Assignment 2
+# DSC 180A Result Replication
 
 [Assignments Link](https://dsc-capstone.github.io/assignments/quarter-1-methodology/)
 
