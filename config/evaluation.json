@@ -1,0 +1,4 @@
+{
+"gps_data": "data/cleaned_gps" #data given by the GPS on the robot
+"external_localization": "data/external" # external sensor data that gives actual robot location
+}
