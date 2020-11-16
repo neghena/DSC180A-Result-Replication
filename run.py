@@ -10,8 +10,10 @@ import json
 #from data/etl import get_data
 #from analysis/analysis import compute_aggregates
 #from model/model import train
-from clean_gps import clean_gps
-from robot import run_robot
+# from clean_gps import clean_gps
+# from robot import run_robot
+
+from src import robot, clean_gps
 
 
 def main(targets):
@@ -35,7 +37,8 @@ def main(targets):
     if 'run_robot' in targets:
         with open('config/run_robot.json') as fh:
             robot_cfg = json.load(fh)
-        run_robot(data, **robot_cfg)
+        vehicle = robot.Robot(**robot_cfg)
+        vehicle.get_gps()
 
     #if 'data' in targets:
         #with open('config/data-params.json') as fh:

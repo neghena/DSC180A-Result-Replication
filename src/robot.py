@@ -1,10 +1,12 @@
+import pandas as pd
 from pymavlink import mavutil
 
 class Robot:
-    def __init__(self, url):
-        self.url = url
-        self.mavcar = mavutil.mavlink_connection(url)
+    def __init__(self, **robot_cfg):
+        self.url = robot_cfg["url"]
+        self.mavcar = mavutil.mavlink_connection(self.url)
         self.closed = False
+        self.gps_log = pd.DataFrame(columns=["lat", "lon"])
 
     def get_gps(self):
         while not self.closed:
@@ -12,6 +14,6 @@ class Robot:
             print(coords)
 
 if __name__ == "__main__":
-    url = "udp:127.0.0.1:14551"
+    url = "tcp:127.0.0.1:5760"
     robot = Robot(url)
     robot.get_gps()

@@ -1,6 +1,7 @@
 {
-"track": "original"
-"laps": 1
-"speed": 0.5
-"side": "left" 
+    "url": "tcp:127.0.0.1:5760",
+    "track": "original",
+    "laps": 1,
+    "speed": 0.5,
+    "side": "left"
 }
