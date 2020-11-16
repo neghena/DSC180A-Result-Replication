@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 pymavlink = "*"
 dronekit-sitl = "*"
+mavproxy = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.8"
