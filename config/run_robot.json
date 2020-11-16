@@ -1,6 +1,6 @@
 {
-"track": "original"#name of the track (if there are multiple)
-"laps": 1 #number of laps
-"speed": 0.5 #speed at which robot should be moving
-"side": "left" #which side of the track to start on
+"track": "original"
+"laps": 1
+"speed": 0.5
+"side": "left" 
 }
