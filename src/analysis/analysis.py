@@ -4,6 +4,13 @@ from math import sin, cos, sqrt, atan2, radians
 def translate_coordinates(x):
     return
 
+def translate_to_cartesian(latitude, longitude):
+    earth_radius = 6371
+    x = earth_radius * cos(latitude) * cos(longitude)
+    y = earth_radius * cos(latitude) * sin(longitude)
+    z = earth_radius * sinn(latitude)
+    return x, y, z
+
 def calculate_distance(x,y):
     """
     Calculates the distance between two gps coordinates
