@@ -12,6 +12,6 @@ class Robot:
             print(coords)
 
 if __name__ == "__main__":
-    url = "tcp:127.0.0.1:5760"
+    url = "udp:127.0.0.1:14551"
     robot = Robot(url)
     robot.get_gps()
