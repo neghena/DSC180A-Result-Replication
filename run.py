@@ -37,7 +37,7 @@ def main(targets):
     if 'run_robot' in targets:
         with open('config/run_robot.json') as fh:
             robot_cfg = json.load(fh)
-        vehicle = robot.Robot(**robot_cfg)
+        vehicle = robot.RobotClient(**robot_cfg)
         vehicle.get_gps()
 
     #if 'data' in targets:

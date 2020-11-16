@@ -1,7 +1,7 @@
 import pandas as pd
 from pymavlink import mavutil
 
-class Robot:
+class RobotClient:
     def __init__(self, **robot_cfg):
         self.url = robot_cfg["url"]
         self.mavcar = mavutil.mavlink_connection(self.url)
@@ -15,5 +15,5 @@ class Robot:
 
 if __name__ == "__main__":
     url = "tcp:127.0.0.1:5760"
-    robot = Robot(url)
+    robot = RobotClient(url)
     robot.get_gps()
