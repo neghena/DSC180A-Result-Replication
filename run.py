@@ -13,7 +13,8 @@ import json
 # from clean_gps import clean_gps
 # from robot import run_robot
 
-from src import robot, clean_gps
+from src import clean_gps
+from src.robot import sitl, robot_client
 
 
 def main(targets):
@@ -34,11 +35,16 @@ def main(targets):
 
         clean_gps(data, **clean_gps_cfg)
 
-    if 'run_robot' in targets:
-        with open('config/run_robot.json') as fh:
-            robot_cfg = json.load(fh)
-        vehicle = robot.RobotClient(**robot_cfg)
+    if 'robot_client' in targets:
+        with open('config/robot_client.json') as fh:
+            robot_client_cfg = json.load(fh)
+        vehicle = robot_client.RobotClient(**robot_client_cfg)
         vehicle.get_gps()
+
+    if 'robot' in targets:
+        with open('config/robot_sim.json') as fh:
+            robot_cfg = json.load(fh)
+        vehicle = sitl.Robot(**robot_cfg)
 
     #if 'data' in targets:
         #with open('config/data-params.json') as fh:
