@@ -8,7 +8,8 @@ def translate_to_cartesian(latitude, longitude):
     earth_radius = 6371
     x = earth_radius * cos(latitude) * cos(longitude)
     y = earth_radius * cos(latitude) * sin(longitude)
-    return x, y
+    z = earth_radius * sinn(latitude)
+    return x, y, z
 
 def calculate_distance(x,y):
     """
