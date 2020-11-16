@@ -7,9 +7,10 @@ import json
 #sys.path.insert(0, 'src/analysis')
 #sys.path.insert(0, 'src/model')
 
-#from etl import get_data
-#from analysis import compute_aggregates
-#from model import train
+from data/etl import get_data
+from analysis/analysis import compute_aggregates
+from model/model import train
+from clean_gps import clean_gps
 
 
 def main(targets):
@@ -43,7 +44,13 @@ def main(targets):
 
     if 'report' in targets:
         with open('notebooks/report.ipynb') as fh:
-            report_cfg = json.load(fh)
+            report_cfg = json.load(fh) # how do you just open a jupyter notebook/turn it into a pdf?
+
+    if 'clean_gps' in targets:
+        with open('config/clean_gps_and_imu_data.json') as fh:
+            clean_gps_cfg = json.load(fh)
+
+        clean_gps(data, **clean_gps_cfg)
 
     return
 
