@@ -1,4 +1,4 @@
 {
-"gps_raw_data": "data/gps_logs" 
-"imu_raw_data": "data/imu_data"
+    "gps_raw_data": "data/gps_logs",
+    "imu_raw_data": "data/imu_data"
 }

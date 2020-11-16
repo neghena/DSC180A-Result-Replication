@@ -1,6 +1,7 @@
 from datetime import datetime
 from pymavlink import mavutil
 
+
 class RobotClient:
     def __init__(self, **robot_cfg):
         self.url = robot_cfg["url"]
@@ -24,6 +25,7 @@ class RobotClient:
             if self.debug:
                 print(log)
             f.write(f"{str(log)}\n")
+
 
 if __name__ == "__main__":
     url = "tcp:127.0.0.1:5760"
