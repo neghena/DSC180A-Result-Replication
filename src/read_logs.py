@@ -15,3 +15,20 @@ def read(x):
             gps_coords.append(line)
 
     return gps_coords
+
+
+def filter_coordinates(gps_lst):
+    '''
+    Filters the coordinates that come out of the read function so that its only x, y, z.
+
+    trying to change this into becoming a csv file not too sure yet though.
+
+    gps_lst should be a list of text gps coordinates
+    '''
+
+    #csv_file = [["X", "Y", "Z"]]
+
+
+
+
+    return
