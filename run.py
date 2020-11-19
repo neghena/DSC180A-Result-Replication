@@ -4,13 +4,13 @@ import argparse
 import sys
 import json
 
-from src import analysis, clean_gps, robot
+from src import analysis, data, robot
 
 
 TARGETS = {
     "robot": robot.Robot,
     "robot_client": robot.RobotClient,
-    "clean_data": clean_gps.clean_gps,
+    "clean_data": data.clean_gps,
     "report": analysis.Report,
 }
 
