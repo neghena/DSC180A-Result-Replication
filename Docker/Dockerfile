@@ -16,15 +16,17 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 # 2) change to root to install packages
 USER root
 
+# 3) install packages
 RUN	apt-get install -y htop && \
     apt-get install -y aria2 && \
     apt-get install -y nmap && \
     apt-get install -y traceroute 
 
 RUN conda install --yes geopandas 
+RUN conda install --yes bokeh
 RUN pip install --no-cache-dir babypandas
-
-# 3) install packages
+RUN pip install --no-cache-dir geopy
+RUN pip install --no-cache-dir scikit-learn
 RUN pip install --no-cache-dir networkx scipy python-louvain
 
 # 4) change back to notebook user
