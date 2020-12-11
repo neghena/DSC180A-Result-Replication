@@ -28,6 +28,9 @@ RUN pip install --no-cache-dir babypandas
 RUN pip install --no-cache-dir geopy
 RUN pip install --no-cache-dir scikit-learn
 RUN pip install --no-cache-dir networkx scipy python-louvain
+RUN pip install --no-cache-dir pymavlink
+RUN pip install --no-cache-dir dronekit-sitl
+RUN pip install --no-cache-dir mavproxy
 
 # 4) change back to notebook user
 COPY /run_jupyter.sh /
